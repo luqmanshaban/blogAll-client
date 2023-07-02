@@ -44,7 +44,7 @@ const Contact: React.FC<Props> = ({unToggle}) => {
         
     
         try {
-          const response = await axios.post('http://localhost:8000/apiv1/contact', user);
+          const response = await axios.post('https://bloggall.cyclic.app/contact', user);
           console.log(response);
         } catch (error) {
           console.error(error);
