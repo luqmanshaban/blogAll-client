@@ -1,0 +1,45 @@
+
+
+.getstarted {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    padding: 100px 20px;
+    background-color: #00A8E8;
+
+    h1 {
+        font-size: 60px;
+    }
+
+    p {
+        text-align: center;
+    }
+    button {
+        cursor: pointer;
+            padding:  15px;
+            background-color: #000;
+            border: none;
+            border-radius: 10px;
+            // font-size: 16px;
+            color: #FCFBFF;
+            font-weight: bold;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 16px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .getstarted {
+        h1 {
+            font-size: 40px;
+        }
+
+        span {
+            display: none;
+        }
+        button {
+            width: 100%;
+        }
+    }
+}

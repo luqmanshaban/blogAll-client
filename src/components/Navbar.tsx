@@ -1,7 +1,14 @@
 import React, { useState } from 'react'
-import styles from './Navbar.module.scss'
+import styles from '../styles/Navbar.module.scss'
 
-const Navbar = () => {
+type Props = {
+  contact: any,
+  signup: any,
+  login: any,
+}
+
+
+const Navbar: React.FC<Props> = ({contact, signup, login}) => {
   const [active, setActive] = useState(false);
 
   const toggleActive = () => {
@@ -26,14 +33,21 @@ const Navbar = () => {
         </h1>
 
         <ul className={`${styles.navMenu} ${active ? styles.active : ''}`}>
-            <li onClick={unToggleActive}>Home</li>
-            <li onClick={unToggleActive}>About</li>
-            <li onClick={unToggleActive}>Contact</li>
-        </ul>
-
-        <ul className={`${styles.buttons} ${active ? styles.active : ''}`} onClick={unToggleActive}>
-            <button id={styles.login}>Login</button>
-            <button id={styles.signup}>Sign Up</button>
+            <li onClick={unToggleActive}>
+              <a href="#features">Features</a>
+            </li>
+            <li onClick={unToggleActive}>
+              <a href="#about">About</a>
+            </li>
+            <li onClick={unToggleActive}>
+              <a href="#contact" onClick={contact}>Contact</a>
+            </li>
+            <li onClick={unToggleActive}>
+            <button onClick={login} id={styles.login}>Login</button>
+            </li>
+            <li onClick={unToggleActive}>
+            <button onClick={signup} id={styles.signup}>Sign Up</button>
+            </li>
         </ul>
 
         <ul className={`${styles.hamburger} ${active ? styles.active : ''}`} onClick={toggleActive}>

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+
+.contact {
+    height: 500px;
+    width: 600px;
+    background-color: #00171F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        font-family: 'Elsie', cursive;
+        font-size: 48px;
+        font-weight: lighter;
+        text-align: center;
+        color: #00A8E8;
+        margin-bottom: 40px;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        #field1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            input {
+                width: 245px;
+                padding: 20px;
+                border: none;
+                border-radius: 8px;
+                font-family: 'Manrope', sans-serif;
+            }
+        }
+
+        #message {
+            width: 500px;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        button {
+            border-radius: 8px;
+            width: 500px;
+            padding: 15px;
+            border: none;
+            color: #00171F;
+            font-size: 20px;
+            background-color: #00A8E8;
+            font-family: 'Manrope', sans-serif;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contact {
+        width: 100% !important;
+        height: 100% !important;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        #field1 {
+            flex-direction: column;
+            input {
+                width: 300px !important;
+                padding: 15px;
+            }
+        }
+
+        #message {
+            width: 300px !important;
+            padding: 15px;
+        }
+
+        button {
+            width: 300px !important;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    h1 {
+        padding-top: 50px;
+        font-family: 'Elsie', cursive;
+        font-size: 48px;
+        font-weight: lighter;
+        text-align: center;
+        color: #00A8E8;
+        margin-bottom: 40px;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+        input {
+            width: 300px;
+            padding: 20px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        button {
+            border-radius: 8px;
+            width: 300px;
+            padding: 15px;
+            border: none;
+            color: #00171F;
+            font-size: 20px;
+            background-color: #00A8E8;
+            font-family: 'Manrope', sans-serif;
+        }
+    }
+
+    .execption {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 20px 0;
+
+        p {
+            color: #fff;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        button{
+            color: #00A8E8;
+            border: none;
+            background-color: #00171F;
+            font-size: 16px;
+            font-family: 'Manrope', sans-serif;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .login {
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: -20px !important;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        #field1 {
+            flex-direction: column;
+            input {
+                width: 300px !important;
+                padding: 15px;
+            }
+        }
+
+        #message {
+            width: 300px !important;
+            padding: 15px;
+        }
+
+        button {
+            width: 300px !important;
+            font-weight: bold;
+        }
+    }
+
+    .execption {
+        flex-direction: column;
+        gap: 1px !important;
+        p {
+            font-size: 14px;
+        }
+    }
+}

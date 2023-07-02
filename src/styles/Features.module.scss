@@ -1,0 +1,59 @@
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px 300px;
+    background-color: #003459;
+
+    h1 {
+        font-size: 50px;
+        color: #00A8E8;
+        line-height: 1.2em;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 200px;
+    }
+
+    article {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 50px;
+
+        h3 {
+            font-size: 20px;
+            font-weight: lighter;
+            color: #00A8E8;
+            margin: 15px 0;
+        }
+        p {
+            color: #fff;
+            font-weight: lighter;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .features {
+        padding: 30px 15px;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        div {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        article {
+            gap: 15px;
+        }
+    }
+}
