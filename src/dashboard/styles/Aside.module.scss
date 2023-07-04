@@ -1,0 +1,118 @@
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px 10px;
+    z-index: 100;
+    background-color: #1D272C;
+}
+.aside {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 50px;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 120px;
+
+              
+    .hamburger {
+        display: none;
+        cursor: pointer;
+  
+        .bar {
+            display: block;
+            height: 3px;
+            width: 20px;
+            background-color: #fff;
+            margin: 5px;
+            transition: 0.5s ease-in-out;
+        }
+        .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+  
+        // &.active {
+        //     .bar:nth-child(2) {
+        //         opacity: 0;
+        //     }
+        //     .bar:nth-child(1) {
+        //         transform: translateY(8px) rotate(45deg);
+        //     }
+        //     .bar:nth-child(3) {
+        //         transform: translateY(-8px) rotate(-45deg);
+        //     }
+        // }
+       }
+    }
+
+    h1 {
+        a {
+            color: #D3D9E3;
+        }
+        img {
+            height: 40px;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navMenu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+        // padding: 20px;
+
+        .hr {
+            width: 200px;
+            height: 1px;
+            background-color: #8d8e91;
+            margin: 5px 0;
+        }
+        li {
+            color: #D3D9E3;
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    nav {
+        position: fixed;
+        left: -900px;
+        padding: 10px;
+        width: 80%;
+        transition: 0.7s ease-in-out;
+        &.active {
+            left: 0;
+        }
+    }
+   
+   .aside {
+        header {
+            .hamburger {
+                display: block;
+            }
+        }
+   }
+}

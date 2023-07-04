@@ -37,7 +37,7 @@ const Home = () => {
     <main>
         <About />
         <Features />
-        <Getstarted />
+        <Getstarted onClick={formfunctions.toggleSignupComponent}/>
     </main>
     <footer>
         <Footer />

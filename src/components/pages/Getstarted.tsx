@@ -1,12 +1,16 @@
 import React from 'react'
 import styles from '../../styles/Getstarted.module.scss'
 
-const Getstarted = () => {
+type Props = {
+  onClick: any;
+}
+
+const Getstarted: React.FC<Props> = ({onClick}) => {
   return (
     <section className={styles.getstarted} >
         <h1>Join BlogAll</h1>
         <p>Are you ready to revolutionize your blogging journey? Sign<span><br /></span> up for BlogAll and watch your creativity soar!</p>
-        <button>Get Started</button>
+        <button onClick={onClick}>Get Started</button>
     </section>
   )
 }
