@@ -16,8 +16,8 @@ const About = () => {
       <article className={styles.art2}>
         <img src={img} alt="schedule" height={300}/>
         <figure>
-          <h1>Revolutionize Content Creation with BlogAll Dashboard</h1>
-          <p>Streamline your content creation process and platform selection with BlogAll‘s user-friendly interface. Turn your messy ideas into polished blog posts in no time!</p>
+          <h1>Smart Scheduler & Cross-Platform Promotion</h1>
+          <p> Schedule, publish, and promote your content across LinkedIn, Hashnode, and Dev.to with a few clicks. BlogAll’s smart scheduler ensures maximum visibility and engagement.</p>
         </figure>
       </article>
     </section>
