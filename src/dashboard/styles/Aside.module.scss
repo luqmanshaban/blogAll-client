@@ -1,6 +1,6 @@
 
 
-nav {
+.dashboardNav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,18 +46,6 @@ nav {
         .bar:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
         }
-  
-        // &.active {
-        //     .bar:nth-child(2) {
-        //         opacity: 0;
-        //     }
-        //     .bar:nth-child(1) {
-        //         transform: translateY(8px) rotate(45deg);
-        //     }
-        //     .bar:nth-child(3) {
-        //         transform: translateY(-8px) rotate(-45deg);
-        //     }
-        // }
        }
     }
 
@@ -91,13 +79,38 @@ nav {
         li {
             color: #D3D9E3;
         }
+
+        .logout {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            background-color: rgb(253, 32, 32);
+            color: #fff;
+            width: 100%;
+            padding: 10px 50px;
+            border-radius: 15px;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            
+            button {
+                cursor: pointer;
+                border: none;
+                background-color: rgb(253, 32, 32);
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
     }
 }
 
 
 @media screen and (max-width: 600px) {
 
-    nav {
+    .dashboardNav {
         position: fixed;
         left: -900px;
         padding: 10px;

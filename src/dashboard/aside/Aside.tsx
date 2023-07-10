@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from '../styles/Aside.module.scss'
 import logo from '../../assets/images/logo.png';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import LogoutIcon from '@mui/icons-material/Logout';
 
 type Props = {
     unToggle: any;
@@ -9,9 +10,16 @@ type Props = {
 }
 
 const Aside: React.FC<Props> = ({unToggle, active}) => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem('authToken');
+    navigate('/');
+    alert('Logged Out');
+  }
 
   return (
-    <nav className={`${active ? styles.active : ''}`}>
+    <nav className={`${styles.dashboardNav} ${active ? styles.active : ''}`}>
     <section className={styles.aside}>
         <header>
           <h1>
@@ -42,6 +50,10 @@ const Aside: React.FC<Props> = ({unToggle, active}) => {
             </li>
             <li>Support
             <p className={styles.hr}></p>
+            </li>
+            <li className={styles.logout} onClick={logout}>
+              <LogoutIcon />
+              <button>Logout</button>
             </li>
 
         </ul>

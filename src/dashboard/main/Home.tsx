@@ -8,6 +8,7 @@ type Props = {
 
 
 const Home: React.FC<Props> = ({toggle}) => {
+  const screen = window.innerWidth <= 600;
   return (
     <div className={styles.home}>
         <header className={`${styles.header}`} onClick={toggle}>
@@ -16,7 +17,7 @@ const Home: React.FC<Props> = ({toggle}) => {
                 <span className={styles.bar}></span>
                 <span className={styles.bar}></span>
             </div>
-            <Header/>
+            {!screen && <Header/>}
         </header>
     </div>
   )
