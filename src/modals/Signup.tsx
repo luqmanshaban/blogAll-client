@@ -35,8 +35,7 @@ const Signup: React.FC<Props> = ({ unToggle, toggleLogin }) => {
     e.preventDefault();    
 
     try {
-      const response = await axios.post('https://bloggall.cyclic.app/signup', user);
-      console.log(response);
+      await axios.post('https://bloggall.cyclic.app/signup', user);
       setTimeout(() => {
         toggleLogin();
         unToggle();

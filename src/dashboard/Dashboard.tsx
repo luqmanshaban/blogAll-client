@@ -12,7 +12,6 @@ const Dashboard = () => {
   const unToggleActive = () => {
       setActive(false)
   }
-  console.log(active);
   
   
   return (
