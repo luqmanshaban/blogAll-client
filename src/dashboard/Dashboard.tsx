@@ -13,7 +13,6 @@ const Dashboard = () => {
       setActive(false)
   }
   
-  
   return (
     <div className={styles.dashboard}>
       <aside>
