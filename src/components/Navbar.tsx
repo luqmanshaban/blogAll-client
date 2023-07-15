@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import styles from '../styles/Navbar.module.scss'
 
 type Props = {
   contact: any,
   signup: any,
   login: any,
+}
+
+const variations = {
+  hidden: {opacity: 0, y: -40},
+  visible: {opacity: 1, y: 0, transition: {duration: 0.8}},
+  transition: {type: 'spring', stiffeness: 60, }
 }
 
 
@@ -20,7 +27,7 @@ const Navbar: React.FC<Props> = ({contact, signup, login}) => {
 
 
   return (
-    <nav className={styles.navbar}>
+    <motion.nav initial='hidden' animate='visible' variants={variations} className={styles.navbar}>
 
         <h1>
             <span id={styles.blogText}>B</span>
@@ -55,7 +62,7 @@ const Navbar: React.FC<Props> = ({contact, signup, login}) => {
           <li className={styles.bar}></li>
           <li className={styles.bar}></li>
         </ul>
-    </nav>
+    </motion.nav>
   )
 }
 
