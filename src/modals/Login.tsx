@@ -3,6 +3,7 @@ import styles from '../styles/Login.module.scss'
 import Backdrop from './Backdrop'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../components/Loading';
 
 type Props = {
     unToggle: any,
@@ -15,6 +16,9 @@ interface FormState {
   }
 
 const Login: React.FC<Props> = ({unToggle, toggleSignup}) => {
+  const [isLoading, setIsLoading] = useState(Boolean);
+  const[unAuthorized, setUnAuthorized] = useState(false);
+  const[serverError, setServerError] = useState(false);
   const navigate = useNavigate();
   const [user, setUser] = useState<FormState>({
     email: '',
@@ -31,6 +35,7 @@ const Login: React.FC<Props> = ({unToggle, toggleSignup}) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true)
     
     try {
       const response = await axios.post('https://bloggall.cyclic.app/login', user);
@@ -40,8 +45,15 @@ const Login: React.FC<Props> = ({unToggle, toggleSignup}) => {
         unToggle();
         navigate('/dashboard');
       },2000)
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
+      if(error.response && error.response.status === 401) {
+        setUnAuthorized(true)
+      }else if(error.response && error.response.status === 500) {
+        setServerError(true);
+      }
+    }finally {
+      setIsLoading(false); 
     }
   };
 
@@ -82,11 +94,14 @@ const Login: React.FC<Props> = ({unToggle, toggleSignup}) => {
               placeholder="Password"
               value={user.password}
             />
+                {unAuthorized && (<h1 style={{color: 'red', fontSize: '16px'}}>Invalid username or password</h1>)}
+                {serverError && (<h1 style={{color: 'red', fontSize: '16px'}}>User Does not exist</h1>)}
             </div>
-            <div>
+            <div id={styles.sumbit}>
                 <button type='submit'>Login</button>
             </div>
         </form>
+        {isLoading && <Loading />}
         <section className={styles.execption}>
           <p>Don't have an account?</p>
           <button onClick={toggleSignUpComponent}>Sign up</button>

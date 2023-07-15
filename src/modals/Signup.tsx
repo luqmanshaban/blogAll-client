@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../styles/Login.module.scss';
 import Backdrop from './Backdrop';
 import axios from 'axios';
+import Loading from '../components/Loading';
 
 type Props = {
   unToggle: any;
@@ -16,6 +17,7 @@ interface FormState {
 }
 
 const Signup: React.FC<Props> = ({ unToggle, toggleLogin }) => {
+  const [isLoading, setIsLoading] = useState(Boolean);
   const [user, setUser] = useState<FormState>({
     firstname: '',
     lastname: '',
@@ -32,7 +34,8 @@ const Signup: React.FC<Props> = ({ unToggle, toggleLogin }) => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();    
+    e.preventDefault();   
+    setIsLoading(true) 
 
     try {
       await axios.post('https://bloggall.cyclic.app/signup', user);
@@ -42,6 +45,8 @@ const Signup: React.FC<Props> = ({ unToggle, toggleLogin }) => {
       },2000)
     } catch (error) {
       console.error(error);
+    }finally {
+      setIsLoading(false)
     }
   };
 
@@ -114,6 +119,7 @@ const Signup: React.FC<Props> = ({ unToggle, toggleLogin }) => {
           <div>
             <button type="submit">Signup</button>
           </div>
+        {isLoading && <Loading />}
         </form>
         <section className={styles.execption}>
           <p>Already have an account?</p>
