@@ -38,7 +38,7 @@ const Login: React.FC<Props> = ({unToggle, toggleSignup}) => {
     setIsLoading(true)
     
     try {
-      const response = await axios.post('https://bloggall.cyclic.app/login', user);
+      const response = await axios.post('https://blogall-server.cyclic.app/login', user);
       const { token } = response.data;
       localStorage.setItem('authToken', token);
       setTimeout(() => {

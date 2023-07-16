@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
 import styles from '../styles/Home.module.scss'
+import DateFilter from './components/DateFilter';
 
 type Props = {
     toggle: any;
@@ -19,6 +20,9 @@ const Home: React.FC<Props> = ({toggle}) => {
             </div>
             {!screen && <Header/>}
         </header>
+        <main>
+          <DateFilter />
+        </main>
     </div>
   )
 }

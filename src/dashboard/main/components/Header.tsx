@@ -7,6 +7,8 @@ const styles = {
     alignItems: 'center',
     gap: '20px',
     width: '100%',
+    backgroundColor: 'aliceblue',
+    padding: '10px 20px',
 
     btn: {
         cursor: 'pointer',
