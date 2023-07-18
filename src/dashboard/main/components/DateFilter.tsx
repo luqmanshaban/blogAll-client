@@ -4,7 +4,6 @@ import styles from './DateFilter.module.scss'
 import LatestIcon from '@mui/icons-material/WatchLater';
 import AllIcon from '@mui/icons-material/AllInclusive';
 import FiltertIcon from '@mui/icons-material/FilterAlt';
-import CalendarIcon from '@mui/icons-material/CalendarMonth';
 import BasicDatePicker from './DatePicker';
 
 type Props = {
