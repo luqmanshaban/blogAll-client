@@ -78,7 +78,6 @@ const Aside: React.FC<Props> = ({unToggle, active}) => {
               <LogoutIcon />
               <button>Logout</button>
             </li>
-
         </ul>
     </section>
     <section>Profile</section>

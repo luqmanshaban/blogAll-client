@@ -1,8 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import styles from './DateFilter.module.scss'
-import CalendarIcon from '@mui/icons-material/CalendarToday';
+import LatestIcon from '@mui/icons-material/WatchLater';
+import AllIcon from '@mui/icons-material/AllInclusive';
+import BasicDatePicker from './DatePicker';
 
+type Props = {
+  toggleArticle: any,
+}
 
 interface UserState {
   firstname: string,
@@ -10,7 +15,7 @@ interface UserState {
   email: string,
 }
 
-const DateFilter = () => {
+const DateFilter: React.FC<Props> = ({toggleArticle}) => {
   const [user, setUser] = useState<UserState>({
     firstname: '',
     lastname: '',
@@ -42,13 +47,21 @@ const DateFilter = () => {
 
   return (
     <section className={styles.section}>
-        <h1>Welcome back {user.firstname}</h1>
+        <h1>Welcome back <span>{user.firstname}</span></h1>
         <article>
-          <figure>
-            <p>filters</p>
-            <CalendarIcon id={styles.icon}/>
+          <figure id={styles.fg1}>
+            <span onClick={() => toggleArticle(0)}>
+              <p>All</p>
+              <AllIcon id={styles.icon}/>
+            </span>
+            <span onClick={() => toggleArticle(1)}>
+              <p>Latest</p>
+              <LatestIcon />
+            </span>
           </figure>
-          {/* <figure></figure> */}
+          <figure id={styles.fg2}>
+            <BasicDatePicker />
+          </figure>
         </article>
     </section>
   )

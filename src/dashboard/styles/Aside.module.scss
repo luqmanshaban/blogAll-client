@@ -48,6 +48,7 @@
     }
 
     h1 {
+        display: none;
         a {
             color: #D3D9E3;
         }
@@ -123,7 +124,7 @@
         position: fixed;
         left: -900px;
         padding: 10px;
-        width: 80%;
+        width: 100%;
         transition: 0.7s ease-in-out;
         &.active {
             left: 0;
