@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import styles from './DateFilter.module.scss'
 import LatestIcon from '@mui/icons-material/WatchLater';
 import AllIcon from '@mui/icons-material/AllInclusive';
+import FiltertIcon from '@mui/icons-material/FilterAlt';
+import CalendarIcon from '@mui/icons-material/CalendarMonth';
 import BasicDatePicker from './DatePicker';
 
 type Props = {
@@ -16,6 +18,7 @@ interface UserState {
 }
 
 const DateFilter: React.FC<Props> = ({toggleArticle}) => {
+  const [active, setActive] = useState(false)
   const [user, setUser] = useState<UserState>({
     firstname: '',
     lastname: '',
@@ -45,24 +48,35 @@ const DateFilter: React.FC<Props> = ({toggleArticle}) => {
     }
   }
 
+  const toggleActive = () => setActive(!active)
+  const unToggleActive = () => setActive(false)
+
+  const onClickEvent = (index: number) => {
+    unToggleActive();
+    toggleArticle(index);
+  }
+
   return (
     <section className={styles.section}>
         <h1>Welcome back <span>{user.firstname}</span></h1>
+
         <article>
-          <figure id={styles.fg1}>
-            <span onClick={() => toggleArticle(0)}>
+          <figure className={`${styles.figure1} ${active ? styles.active: ''}`}>
+            <span onClick={() => onClickEvent(0)}>
               <p>All</p>
               <AllIcon id={styles.icon}/>
             </span>
-            <span onClick={() => toggleArticle(1)}>
+            <span onClick={() => onClickEvent(1)}>
               <p>Latest</p>
               <LatestIcon />
             </span>
           </figure>
-          <figure id={styles.fg2}>
+          <figure className={`${styles.figure1} ${active ? styles.active: ''}`} >
             <BasicDatePicker />
           </figure>
         </article>
+        <button className={styles.filter} onClick={toggleActive}><FiltertIcon />Filter</button>
+        <hr />
     </section>
   )
 }

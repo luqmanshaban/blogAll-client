@@ -23,7 +23,7 @@
         @include flex();
         gap: 20px;
 
-        #fg1 {
+        .figure1 {
             @include flex();
             gap: 20px;
             padding: 10px;
@@ -40,26 +40,57 @@
             }
         }
 
-        
+
+        .figure1, .figure2 {
+            display: none !important;
+            transition: 0.3s ease-in-out;
+             &.active {
+                 display: flex !important;
+             }
+         }
 
         #icon {
             font-size: 18px;
         }
     }
+
+    .filter {
+        padding: 5px;
+        cursor: pointer;
+        color: #00171F;
+        @include flex();
+        border-radius: 5px;
+        background-color: transparent;
+        position: fixed;
+        right: 100px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
     .section {
-        padding: 10px;
-        flex-direction: column;
+        align-items: flex-start;
         gap: 20px;
+        position: fixed;
+        flex-direction: column;
+        z-index: 200;
+        width: 100%;
+        background-color: #fff;
 
         h1 {
             font-size: 20px;
         }
 
+        
         article {
-            flex-direction: row-reverse;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+        }
+
+        .filter {
+            right: 20px;
         }
         
     }

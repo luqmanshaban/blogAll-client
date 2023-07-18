@@ -44,7 +44,7 @@ const LatestArticles = () => {
     <div className={styles.latesArticles}>
       <h1>Latest Dev.to</h1>
       <ImageList cols={getGridCols()} rowHeight={cellHeight()} style={{ flexWrap: 'nowrap', }}>
-         {articles.slice(0, 5).map((article, index) => (
+         {articles.slice(0, 3).map((article, index) => (
           <ImageListItem key={index} className={styles.artc}>
            <article key={article.id}>
              <img src={article.cover_image} alt={article.title} />
