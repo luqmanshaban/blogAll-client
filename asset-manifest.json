@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/luqmanshaban/blogAll-client/static/css/main.1413b8da.css",
+    "main.js": "/luqmanshaban/blogAll-client/static/js/main.e963066b.js",
+    "static/js/787.fe16b27c.chunk.js": "/luqmanshaban/blogAll-client/static/js/787.fe16b27c.chunk.js",
+    "static/media/schedule.jpg": "/luqmanshaban/blogAll-client/static/media/schedule.bae3788215d48a40b829.jpg",
+    "static/media/twt.webp": "/luqmanshaban/blogAll-client/static/media/twt.1cef07823e3803c4e4e1.webp",
+    "index.html": "/luqmanshaban/blogAll-client/index.html",
+    "main.1413b8da.css.map": "/luqmanshaban/blogAll-client/static/css/main.1413b8da.css.map",
+    "main.e963066b.js.map": "/luqmanshaban/blogAll-client/static/js/main.e963066b.js.map",
+    "787.fe16b27c.chunk.js.map": "/luqmanshaban/blogAll-client/static/js/787.fe16b27c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1413b8da.css",
+    "static/js/main.e963066b.js"
+  ]
+}
